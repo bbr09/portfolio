@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beon Binu - Personal Website</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    header img {
+      width: 200px;
+      border-radius: 50%;
+      animation: zoomIn 1s infinite alternate;
+    }
+    
+    nav {
+      background-color: #666;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    section {
+      padding: 100px 20px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Animation keyframes */
+    @keyframes zoomIn {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
+
+    /* Add animations for sections as they appear on scroll */
+    section.show {
+      opacity: 1;
+    }
+
+    /* Grid layout for sections */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 20px;
+      padding: 20px;
+    }
+
+    /* Card-style layout for sections */
+    .card {
+      background-color: #444;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Text styles */
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="src="bbr09/portfolio/portfolio.jpg" alt="My Picture">
+    <h1>Beon Binu</h1>
+    <p>Welcome to my personal website</p>
+  </header>
+
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Container for grid layout -->
+  <div class="container">
+
+    <!-- About Me section -->
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <p>Hi, I'm Beon Binu, a passionate web developer with a love for creating beautiful and functional websites.</p>
+      <p>I specialize in front-end development and have experience working with HTML, CSS, and JavaScript.</p>
+    </section>
+
+    <!-- Portfolio section -->
+    <section id="portfolio" class="card">
+      <h2>Portfolio</h2>
+      <p>Here are some of the projects I've worked on:</p>
+      <ul>
+        <li>Project 1: Website for a local business</li>
+        <li>Project 2: Personal blog</li>
+        <li>Project 3: E-commerce platform</li>
+      </ul>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>If you'd like to get in touch, feel free to reach out:</p>
+      <ul>
+        <li>Email: beonbinu@example.com</li>
+        <li>Phone: +1234567890</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Beon Binu. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('scroll', reveal);
+
+      function reveal() {
+        var sections = document.querySelectorAll('section');
+
+        sections.forEach(function(section) {
+          var sectionTop = section.getBoundingClientRect().top;
+          var windowHeight = window.innerHeight;
+
+          if (sectionTop < windowHeight) {
+            section.classList.add('show');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
